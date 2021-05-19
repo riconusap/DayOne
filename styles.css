@@ -7,6 +7,7 @@ body {
 :root {
   --first-color: hsl(179, 62%, 43%);
   --sec-color: hsl(71, 73%, 54%);
+  --third-color: hsl(179, 62%, 70%);
   --font: "Karla", sans-serif;
 }
 
@@ -23,12 +24,14 @@ body {
   font-weight: 700;
   font-size: 32px;
   color: var(--first-color);
+  word-wrap: break-word;
 }
 
 .sec__header {
   font-family: "Karla", sans-serif;
   font-size: 24px;
   color: var(--sec-color);
+  word-wrap: break-word;
 }
 
 p {
@@ -36,19 +39,33 @@ p {
   font-family: "Karla", sans-serif;
   font-size: 16px;
 }
-.row1 {
+.container1__row1 {
   display: flex;
   flex-direction: column;
-  width: auto;
   padding: 44px;
   background-color: white;
 }
+
 .row2 {
   display: flex;
   flex-direction: row;
-  width: auto;
+  width: 100%;
+}
+
+.container1__row2 {
+  display: flex;
+  flex-direction: column;
   padding: 44px;
+  width: 50%;
   background-color: var(--first-color);
+}
+
+.container2__row2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 44px;
+  background-color: var(--third-color);
 }
 
 .row1__row2 {
@@ -58,6 +75,8 @@ p {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   width: 50%;
   padding: 10px;
@@ -65,7 +84,7 @@ p {
 
 .signup__button {
   width: 100%;
-  height: 25%;
+  height: 40px;
   margin: 16px 0px;
   border-radius: 10px;
   font-size: 16px;
@@ -85,4 +104,22 @@ p {
 
 .signup__button:active {
   background-color: yellow;
+}
+
+@media only screen and (max-width: 375px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .row2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container1__row2,
+  .container2__row2,
+  .container1__row1 {
+    width: 90%;
+  }
 }
